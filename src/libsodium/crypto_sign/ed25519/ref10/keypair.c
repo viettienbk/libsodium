@@ -42,6 +42,21 @@ crypto_sign_ed25519_keypair(unsigned char *pk, unsigned char *sk)
     return ret;
 }
 
+// tienlv start
+int
+crypto_sign_contract_keypair(unsigned char *input, unsigned char *pk, unsigned char *sk)
+{
+    unsigned char seed[32];
+    int           ret;
+
+    crypto_hash_sha256(seed, input, sizeof input);
+    ret = crypto_sign_ed25519_seed_keypair(pk, sk, seed);
+    sodium_memzero(seed, sizeof seed);
+
+    return ret;
+}
+// tienlv end
+
 int
 crypto_sign_ed25519_pk_to_curve25519(unsigned char *curve25519_pk,
                                      const unsigned char *ed25519_pk)

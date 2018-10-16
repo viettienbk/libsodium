@@ -67,6 +67,11 @@ int crypto_sign_ed25519_verify_detached(const unsigned char *sig,
 SODIUM_EXPORT
 int crypto_sign_ed25519_keypair(unsigned char *pk, unsigned char *sk);
 
+//  tienlv start
+SODIUM_EXPORT
+int crypto_sign_contract_keypair(unsigned char *input, unsigned char *pk, unsigned char *sk);
+//  tienlv end
+
 SODIUM_EXPORT
 int crypto_sign_ed25519_seed_keypair(unsigned char *pk, unsigned char *sk,
                                      const unsigned char *seed);

@@ -56,6 +56,14 @@ crypto_sign_keypair(unsigned char *pk, unsigned char *sk)
     return crypto_sign_ed25519_keypair(pk, sk);
 }
 
+//  tienlv start
+int
+crypto_sign_contract(unsigned char *input,unsigned char *pk, unsigned char *sk)
+{
+    return crypto_sign_contract_keypair(input, pk, sk);
+}
+//  tienlv end
+
 int
 crypto_sign(unsigned char *sm, unsigned long long *smlen_p,
             const unsigned char *m, unsigned long long mlen,

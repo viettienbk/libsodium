@@ -56,6 +56,11 @@ int crypto_sign_seed_keypair(unsigned char *pk, unsigned char *sk,
 SODIUM_EXPORT
 int crypto_sign_keypair(unsigned char *pk, unsigned char *sk);
 
+// tienlv start
+SODIUM_EXPORT
+int crypto_sign_contract(unsigned char *input, unsigned char *pk, unsigned char *sk);
+// tienlv end
+
 SODIUM_EXPORT
 int crypto_sign(unsigned char *sm, unsigned long long *smlen_p,
                 const unsigned char *m, unsigned long long mlen,
