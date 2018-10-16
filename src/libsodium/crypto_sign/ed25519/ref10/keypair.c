@@ -42,7 +42,7 @@ crypto_sign_ed25519_keypair(unsigned char *pk, unsigned char *sk)
     return ret;
 }
 
-// tienlv start
+// tienlv start 1
 int
 crypto_sign_contract_keypair(unsigned char *input, unsigned char *pk, unsigned char *sk)
 {
